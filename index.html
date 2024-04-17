@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link
+    href="https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap"
+    rel="stylesheet"
+    type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: RGB(245, 245, 245);
+            overflow: auto;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+          }
+
+        .fade-in.active {
+            opacity: 1;
+        }
+
+        .topnav {
+            overflow: hidden;
+            background-color: RGB(254, 254, 254);
+            position: fixed;
+            width: 97%;
+            z-index: 1000;
+            border-radius: 15px;
+            filter: drop-shadow(0px 10px 10px rgba(0,0,0,0.1));
+            opacity: 95%;
+        }
+
+        .topnav a {
+            float: left;
+            display: block;
+            color: black;
+            font-weight: bold;
+            text-align: center;
+            padding: 3px 16px;
+            text-decoration: none;
+            font-size: 24px;
+            line-height: 50px;
+            transition: color 0.5s;
+        }
+
+        #Topnav #nav-links {
+            float: right;
+        }
+
+        .topnav a:hover {
+            opacity: 0.8;
+            color: lightskyblue;
+        }
+
+        .topnav a:active, .topnav a:focus {
+            color: black;
+        }
+
+        .underline {
+            position: absolute;
+            height: 3px;
+            background: linear-gradient(to right, rgb(26, 109, 218), #8B008B);
+            width: 0;
+            transition: all 0.5s;
+            border-radius: 3px;
+            bottom: 0px;
+            opacity: 0.7;
+        }
+
+        .icon {
+            display: block;
+            cursor: pointer;
+            float: right;
+            color: #f2f2f2;
+            transform: translateY(5%);
+            position: relative;
+            padding: 12px;
+        }
+
+        .bar1, .bar2, .bar3 {
+            width: 35px;
+            height: 5px;
+            background-color: black;
+            margin: 6px 0;
+            transition: 0.4s;
+        }
+
+        .change .bar1 {
+            transform: rotate(-45deg) translate(-9px, 6px);
+        }
+
+        .change .bar2 {opacity: 0;}
+
+        .change .bar3 {
+            transform: rotate(45deg) translate(-8px, -8px);
+        }
+
+        .scroll-top-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 40px;
+            height: 40px;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+            color: white;
+        }
+        
+        .circle {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: lightskyblue;
+            border-radius: 100%;
+            transition: transform 0.3s ease-in-out;
+            transform-origin: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 80%;
+            transition: transform 0.4s ease, border-radius 0.4s ease;
+        }
+        
+        .scroll-top-btn:hover .circle {
+            transform: scale(1.1);
+            border-radius: 40%;
+            transition: transform 0.2s ease, border-radius 0.2s ease;
+        }
+        
+        .scroll-top-btn span {
+            display: block;
+            color: white;
+            font-size: 20px;
+        }
+        
+        .scroll-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .scroll-top-btn span {
+            color: white;
+            font-size: 24px;
+            border-bottom: 10px solid white;
+            border-left: 8px solid transparent;
+            border-right: 8px solid transparent;
+            border-top: none;
+            border-radius: 5px;
+        }
+
+        @media screen and (min-width: 601px) {
+            .topnav a:not(:first-child) {display: block;}
+            .topnav a.icon {
+                display: none;
+            }
+            .topnav a#twitter-link {
+                display: block;
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            .topnav a#logo-lnk{display: block;}
+            .topnav a{display: none;}
+            .topnav a.icon {
+                float: right;
+                display: block;
+                color: #f2f2f2;
+            }
+            .topnav.responsive a.icon {
+                position: fixed;
+                right: 0;
+                top: 0;
+            }
+            .topnav.responsive a {
+                float: none;
+                display: block;
+                text-align: left;
+            }
+            .topnav a {
+                font-size: 30px;
+            }
+            .underline {
+                display: none;
+            }
+            .topnav.responsive {
+                display: flex;
+                flex-direction: column;
+            }
+        }
+        #test {
+            height: 200vh;
+            font-size: 200vh;
+        }
+    </style>
+</head>
+<body>
+    <div class="topnav" id="Topnav">
+        <div id="logo">
+            <a class="link" href="/" id="logo-lnk">
+                <img src="logo.png" alt="LOGO" style="height: 24px;">
+            </a>
+        </div>
+        <div id="nav-links">
+            <a class="link" href="/">ホーム</a>
+            <a class="link" href="/works/mix">販売・買取</a>
+            <a class="link" href="/profile/Bio">会社案内</a>
+            <a class="link"href="/contact">連絡</a>
+        </div>
+        <div class="underline" id="underline"></div>
+        <a href="javascript:void(0);" class="icon" onclick="menu()">
+            <div class="bar1"></div>
+            <div class="bar2"></div>
+            <div class="bar3"></div>
+        </a>
+    </div>
+
+    <div id="test">a</div>
+
+    <div class="scroll-top-btn" onclick="scrollToTop()">
+        <div class="circle"></div>
+        <div class="scroll-container">
+            <span></span>
+        </div>
+    </div>
+
+<script>
+    function menu() {
+        var underline = document.getElementById('underline');
+        var links = document.querySelectorAll('.topnav a');
+    
+        links.forEach(function(link) {
+            link.addEventListener('mouseenter', function(e) {
+                underline.style.width = e.target.offsetWidth + 'px';
+                underline.style.left = e.target.offsetLeft + 'px';
+            });
+    
+            link.addEventListener('mouseleave', function(e) {
+                underline.style.width = '0';
+                underline.style.left = e.target.offsetLeft + 'px';
+            });
+        });
+
+        var x = document.getElementById("Topnav");
+        var icon = document.querySelector(".icon");
+        if (x.className === "topnav") {
+            x.className += " responsive";
+            icon.classList.add("change");
+        } else {
+            x.className = "topnav";
+            icon.classList.remove("change");
+        }
+    }
+
+    function scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
+    
+
+    window.onload = function() {
+        var underline = document.getElementById('underline');
+        var links = document.querySelectorAll('.topnav a');
+    
+        links.forEach(function(link) {
+            link.addEventListener('mouseenter', function(e) {
+                underline.style.width = e.target.offsetWidth + 'px';
+                underline.style.left = e.target.offsetLeft + 'px';
+            });
+    
+            link.addEventListener('mouseleave', function(e) {
+                underline.style.width = '0';
+                underline.style.left = e.target.offsetLeft + 'px';
+            });
+        });
+    
+        var worksLink = document.querySelector('.topnav a[href="/"]');
+        underline.style.width = worksLink.offsetWidth + 'px';
+        underline.style.left = worksLink.offsetLeft + 'px';
+    }
+    
+    function saveScrollPosition() {
+        var scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
+        localStorage.setItem('scrollPosition', scrollPosition);
+    }
+
+    function scrollToSavedPosition() {
+        var savedPosition = localStorage.getItem('scrollPosition');
+        if (savedPosition !== null) {
+            window.scrollTo(0, savedPosition);
+            localStorage.removeItem('scrollPosition');
+        }
+    }
+
+    window.addEventListener('load', scrollToSavedPosition);
+    window.addEventListener('scroll', saveScrollPosition);
+
+    function navigateTo(url) {
+        document.getElementById('content').classList.add('fade-in');
+        
+        fetch(url)
+          .then(response => response.text())
+          .then(html => {
+            document.getElementById('content').innerHTML = html;
+            
+            setTimeout(() => {
+              document.getElementById('content').classList.remove('fade-in');
+            }, 100);
+            
+            history.pushState({}, '', url);
+          })
+          .catch(error => console.error('Error loading page: ', error));
+      }
+      
+      document.querySelectorAll('.page-link').forEach(link => {
+        link.addEventListener('click', event => {
+          event.preventDefault();
+          navigateTo(link.href);
+        });
+      });
+      
+      window.addEventListener('popstate', () => {
+        navigateTo(location.href);
+      });
+      
+      navigateTo(location.href);
+
+</script>
+
+</body>
+</html>
