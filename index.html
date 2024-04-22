@@ -10,12 +10,17 @@
         body {
             font-family: Arial, Helvetica, sans-serif;
             background-color: RGB(245, 245, 245);
-            overflow: auto;
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .body::-webkit-scrollbar{
+            display: none;
         }
 
         .fade-in {
             opacity: 0;
-            transition: opacity 0.5s ease-in-out;
+            transition: opacity 0.7s ease-in-out;
           }
 
         .fade-in.active {
@@ -24,6 +29,8 @@
 
         .topnav {
             overflow: hidden;
+            display: flex;
+            justify-content: center;
             background-color: RGB(254, 254, 254);
             position: fixed;
             width: 98%;
@@ -31,6 +38,15 @@
             border-radius: 15px;
             filter: drop-shadow(0px 10px 10px rgba(0,0,0,0.1));
             opacity: 95%;
+            align-items: center;
+        }
+
+        .topnav img{
+            display: flex;
+            margin-top: auto;
+            margin-bottom: auto;
+            padding-top: 3%;
+            padding-bottom: 3%;
         }
 
         .topnav a {
@@ -41,13 +57,9 @@
             text-align: center;
             padding: 3px 16px;
             text-decoration: none;
-            font-size: 24px;
+            font-size: 28px;
             line-height: 50px;
             transition: color 0.5s;
-        }
-
-        #Topnav #nav-links {
-            float: right;
         }
 
         .topnav a:hover {
@@ -79,21 +91,29 @@
             position: relative;
             padding: 12px;
         }
+        
+        .icon {
+            position: absolute;
+            right: 0;
+            bottom: 8px;
+        }
 
         .bar1, .bar2, .bar3 {
             width: 35px;
             height: 5px;
             background-color: black;
-            margin: 6px 0;
+            margin: 20% 0;
             transition: 0.4s;
         }
 
         .change .bar1 {
-            transform: rotate(-45deg) translate(-9px, 6px);
+            transform: rotate(-45deg) translate(-9px, 8px);
         }
-
-        .change .bar2 {opacity: 0;}
-
+        
+        .change .bar2 {
+            opacity: 0;
+        }
+        
         .change .bar3 {
             transform: rotate(45deg) translate(-8px, -8px);
         }
@@ -154,8 +174,177 @@
             border-top: none;
             border-radius: 5px;
         }
+        
+        #shopoutsidephoto img {
+            width: 100vw;
+            height: auto;
+            display: flex;
+            margin: 0 auto;
+        }
 
-        @media screen and (min-width: 601px) {
+        #shopoutsidephoto {
+            position: relative;
+        }
+        
+        #shopoutsidephoto h1 {
+            position: absolute;
+            display: flex;
+            width: 15vw;
+            top: 1vw;
+            font-size: 15vw;
+            color: white;
+        }
+        
+        #shopoutsidephoto h2 {
+            position: absolute;
+            display: flex;
+            width: 25vw;
+            top: 10vw;
+            font-size: 15vw;
+            color: white;
+        }        
+
+        #shopoutsidephoto h3 {
+            position: absolute;
+            display: flex;
+            width: 300vw;
+            left: 3vw;
+            top: 37vw;
+            font-size: 3vw;
+            color: white;
+        }
+
+        #shopoutsidephoto h4 {
+            position: absolute;
+            display: flex;
+            width: 300vw;
+            left: 3vw;
+            top: 40vw;
+            font-size: 3vw;
+            color: white;
+        }
+
+        #shopoutsidephoto h1, #shopoutsidephoto h2, #shopoutsidephoto h3, #shopoutsidephoto h4{
+            position: absolute;
+            top: 60vw;
+            opacity: 0;
+            transition: opacity 1s ease, top 1s ease;
+        }
+        
+        #shopoutsidephoto h1.active {
+            top: 1vw;
+            opacity: 1;
+        }
+
+        #shopoutsidephoto h2.active {
+            top: 10vw;
+            opacity: 1;
+        }
+        
+        #shopoutsidephoto h3.active {
+            top: 37vw;
+            opacity: 1;
+        }
+
+        #shopoutsidephoto h4.active {
+            top: 40vw;
+            opacity: 1;
+        }
+
+        #intr-mom {
+            display: flex;
+            gap: 2%;
+        }
+
+        #intr-cont {
+            width: 25%;
+            height: 100%;
+            background-color:rgb(255, 255, 255);
+            filter: drop-shadow(0px 10px 10px rgba(0,0,0,0.1));
+            z-index: 20;
+            border-radius: 10px;
+        }
+
+        #intr-cont p{
+            text-align: center;
+            margin: 0px 0;
+        }
+
+        #intr-cont p:first-child{
+
+            font-size: 150%;
+        }
+
+        #intr-cont2 {
+            width: 25%;
+            height: 100%;
+            background-color:rgb(255, 255, 255);
+            filter: drop-shadow(0px 10px 10px rgba(0,0,0,0.1));
+            z-index: 20;
+            border-radius: 10px;
+        }
+
+        #intr-cont2 p{
+            text-align: center;
+            margin: 0px 0;
+        }
+
+        #intr-cont2 p:first-child{
+
+            font-size: 150%;
+        }
+
+        #intr-cont2 p:not(:first-child) {
+            font-size: 100%;
+        }
+
+        #intr-cont3 {
+            width: 25%;
+            height: 100%;
+            background-color:rgb(255, 255, 255);
+            filter: drop-shadow(0px 10px 10px rgba(0,0,0,0.1));
+            z-index: 20;
+            border-radius: 10px;
+        }
+
+        #intr-cont3 p{
+            text-align: center;
+            margin: 0px 0;
+        }
+
+        #intr-cont3 p:first-child{
+
+            font-size: 150%;
+        }
+
+        #intr-cont3 p:not(:first-child) {
+            font-size: 100%;
+        }
+
+        #intr-cont4 {
+            width: 25%;
+            height: 100%;
+            background-color:rgb(255, 255, 255);
+            filter: drop-shadow(0px 10px 10px rgba(0,0,0,0.1));
+            z-index: 20;
+            border-radius: 10px;
+        }
+
+        #intr-cont4 p{
+            text-align: center;
+            margin: 0px 0;
+        }
+
+        #intr-cont4 p:first-child{
+
+            font-size: 140%;
+        }
+
+        #intr-cont4 p:not(:first-child) {
+            font-size: 100%;
+        }
+
+        @media screen and (min-width: 651px) {
             .topnav a:not(:first-child) {display: block;}
             .topnav a.icon {
                 display: none;
@@ -165,9 +354,12 @@
             }
         }
 
-        @media screen and (max-width: 600px) {
+        @media screen and (max-width: 650px) {
+            .topnav {
+                justify-content: center;
+            }
             .topnav a#logo-lnk{display: block;}
-            .topnav a{display: none;}
+            .topnav a {display: none;}
             .topnav a.icon {
                 float: right;
                 display: block;
@@ -181,7 +373,7 @@
             .topnav.responsive a {
                 float: none;
                 display: block;
-                text-align: left;
+                text-align: center;
             }
             .topnav a {
                 font-size: 30px;
@@ -194,19 +386,13 @@
                 flex-direction: column;
             }
         }
-        #test {
-            height: 200vh;
-            font-size: 200vh;
-        }
     </style>
 </head>
-<body>
+<body class="fade-in">
     <div class="topnav" id="Topnav">
-        <div id="logo">
-            <a class="link" href="/" id="logo-lnk">
-                <img src="logo.png" alt="LOGO" style="height: 24px;">
-            </a>
-        </div>
+        <a href="/" id="logo-lnk">
+            <img src="/assets/logo.png" alt="LOGO" style="height: 48px; width: auto;">
+        </a>
         <div id="nav-links">
             <a class="link" href="/">ホーム</a>
             <a class="link" href="/works/mix">販売・買取</a>
@@ -220,8 +406,41 @@
             <div class="bar3"></div>
         </a>
     </div>
-
-    <div id="test"></div>
+    <div id="mainbody">
+        <div id="shopoutsidephoto">
+            <img src="/assets/realphoto1.jpg">
+            <h1>BIG</h1>
+            <h2>BLOCK</h2>
+            <h3>車の事ならお任せ下さい</h3>
+            <h4>まずはお気軽にお問い合わせ下さい。</h4>
+            <div id="intr-mom">
+                <div id="intr-cont">
+                    <p>新・中古車販売</p>
+                    <p>
+                    新車中古車をリーズナブルに販売。
+                    </p>
+                </div>
+                <div id="intr-cont2">
+                    <p>車検・修理</p>
+                    <p>
+                    外車・国産車問わず整備・車検・修理などトータルサポートしています！！
+                    </p>
+                </div>
+                <div id="intr-cont3">
+                    <p>買取</p>
+                    <p>
+                    お客様の満足を第一に価格を決めさせていただきます。
+                    </p>
+                </div>
+                <div id="intr-cont4">
+                    <p>レストア・カスタム</p>
+                    <p>
+                    test
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="scroll-top-btn" onclick="scrollToTop()">
         <div class="circle"></div>
@@ -234,13 +453,13 @@
     function menu() {
         var underline = document.getElementById('underline');
         var links = document.querySelectorAll('.topnav a');
-    
+
         links.forEach(function(link) {
             link.addEventListener('mouseenter', function(e) {
                 underline.style.width = e.target.offsetWidth + 'px';
                 underline.style.left = e.target.offsetLeft + 'px';
             });
-    
+
             link.addEventListener('mouseleave', function(e) {
                 underline.style.width = '0';
                 underline.style.left = e.target.offsetLeft + 'px';
@@ -264,29 +483,60 @@
             behavior: 'smooth'
         });
     }
-    
+
+    function fadeIn(element) {
+        element.classList.remove('fade-out');
+        element.classList.add('fade-in');
+        setTimeout(function() {
+            element.classList.add('active');
+        }, 50);
+    }
 
     window.onload = function() {
+        fadeIn(document.body);
+    
         var underline = document.getElementById('underline');
         var links = document.querySelectorAll('.topnav a');
+        var h1Element = document.querySelector('#shopoutsidephoto h1');
+        var h2Element = document.querySelector('#shopoutsidephoto h2');
+        var h3Element = document.querySelector('#shopoutsidephoto h3');
+        var h4Element = document.querySelector('#shopoutsidephoto h4');
     
         links.forEach(function(link) {
             link.addEventListener('mouseenter', function(e) {
                 underline.style.width = e.target.offsetWidth + 'px';
                 underline.style.left = e.target.offsetLeft + 'px';
             });
-    
+
             link.addEventListener('mouseleave', function(e) {
                 underline.style.width = '0';
                 underline.style.left = e.target.offsetLeft + 'px';
             });
         });
-    
+
         var worksLink = document.querySelector('.topnav a[href="/"]');
         underline.style.width = worksLink.offsetWidth + 'px';
         underline.style.left = worksLink.offsetLeft + 'px';
-    }
+
+        fadeIn(document.body);
+
+        setTimeout(function() {
+            h1Element.classList.add('active');
+        }, 800);
+
+        setTimeout(function() {
+            h2Element.classList.add('active');
+        }, 1000);
     
+        setTimeout(function() {
+            h3Element.classList.add('active');
+        }, 1200);
+
+        setTimeout(function() {
+            h4Element.classList.add('active');
+        }, 1500);
+    };
+
     function saveScrollPosition() {
         var scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
         localStorage.setItem('scrollPosition', scrollPosition);
@@ -295,43 +545,37 @@
     function scrollToSavedPosition() {
         var savedPosition = localStorage.getItem('scrollPosition');
         if (savedPosition !== null) {
-            window.scrollTo(0, savedPosition);
+            var currentPosition = window.pageYOffset || document.documentElement.scrollTop;
+            var distance = Math.abs(savedPosition - currentPosition);
+            var duration = 1000;
+            var startTime;
+    
+            function animation(currentTime) {
+                if (startTime === undefined) startTime = currentTime;
+                var elapsedTime = currentTime - startTime;
+                window.scrollTo(0, easeInOut(elapsedTime, currentPosition, savedPosition - currentPosition, duration));
+    
+                if (elapsedTime < duration) {
+                    requestAnimationFrame(animation);
+                }
+            }
+    
+            function easeInOut(t, b, c, d) {
+                t /= d / 2;
+                if (t < 1) return c / 2 * t * t * t + b;
+                t -= 2;
+                return c / 2 * (t * t * t + 2) + b;
+            }
+    
+            requestAnimationFrame(animation);
+            
             localStorage.removeItem('scrollPosition');
         }
     }
+    
 
     window.addEventListener('load', scrollToSavedPosition);
     window.addEventListener('scroll', saveScrollPosition);
-
-    function navigateTo(url) {
-        document.getElementById('content').classList.add('fade-in');
-        
-        fetch(url)
-          .then(response => response.text())
-          .then(html => {
-            document.getElementById('content').innerHTML = html;
-            
-            setTimeout(() => {
-              document.getElementById('content').classList.remove('fade-in');
-            }, 100);
-            
-            history.pushState({}, '', url);
-          })
-          .catch(error => console.error('Error loading page: ', error));
-      }
-      
-      document.querySelectorAll('.page-link').forEach(link => {
-        link.addEventListener('click', event => {
-          event.preventDefault();
-          navigateTo(link.href);
-        });
-      });
-      
-      window.addEventListener('popstate', () => {
-        navigateTo(location.href);
-      });
-      
-      navigateTo(location.href);
 
 </script>
 
