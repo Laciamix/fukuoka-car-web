@@ -257,7 +257,7 @@
                  1px 1px 0 black;
         }
 
-        #shopoutsidephoto h1, #shopoutsidephoto h2, #shopoutsidephoto h3, #shopoutsidephoto h4{
+        #shopoutsidephoto h1, #shopoutsidephoto h2, #shopoutsidephoto h3, #shopoutsidephoto h4, #shopoutsidephoto h5{
             position: absolute;
             top: 60vw;
             opacity: 0;
@@ -281,6 +281,11 @@
 
         #shopoutsidephoto h4.active {
             top: 40vw;
+            opacity: 1;
+        }
+
+        #shopoutsidephoto h5.active {
+            top: 43vw;
             opacity: 1;
         }
 
@@ -731,6 +736,7 @@
             <h2>BLOCK</h2>
             <h3>車の事ならお任せ下さい</h3>
             <h4>まずはお気軽にお問い合わせ下さい。</h4>
+            <h5>電話: 0078-6002-395958</h5>
             <div id="intr-mom">
                 <div id="intr-cont">
                     <a href="#car-shop"><p>新・中古車販売</p></a>
@@ -893,6 +899,7 @@
         var h2Element = document.querySelector('#shopoutsidephoto h2');
         var h3Element = document.querySelector('#shopoutsidephoto h3');
         var h4Element = document.querySelector('#shopoutsidephoto h4');
+        var h5Element = document.querySelector('#shopoutsidephoto h5');
     
         links.forEach(function(link) {
             link.addEventListener('mouseenter', function(e) {
@@ -927,6 +934,10 @@
         setTimeout(function() {
             h4Element.classList.add('active');
         }, 1500);
+
+        setTimeout(function() {
+            h5Element.classList.add('active');
+        }, 1700);
     };
 
     function saveScrollPosition() {
