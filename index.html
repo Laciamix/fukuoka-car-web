@@ -7,6 +7,10 @@
     type="text/css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
+        html{
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: Arial, Helvetica, sans-serif;
             background-color: RGB(245, 245, 245);
@@ -256,6 +260,8 @@
             display: flex;
             gap: 2%;
             font-weight: 600;
+            padding-top: 2vw;
+            padding-bottom: 2vw;
         }
 
         #intr-cont {
@@ -296,10 +302,6 @@
             font-size: 150%;
         }
 
-        #intr-cont2 p:not(:first-child) {
-            font-size: 100%;
-        }
-
         #intr-cont3 {
             width: 25%;
             height: 100%;
@@ -319,15 +321,11 @@
             font-size: 150%;
         }
 
-        #intr-cont3 p:not(:first-child) {
-            font-size: 100%;
-        }
-
         #intr-cont4 {
             width: 25%;
             height: 100%;
             background-color:rgb(255, 255, 255);
-            filter: drop-shadow(0px 10px 10px rgba(0,0,0,0.1));
+            filter: drop-shadow(0px 10px 10px rgba(0,0,0,0.1));;
             z-index: 20;
             border-radius: 10px;
         }
@@ -342,8 +340,54 @@
             font-size: 140%;
         }
 
-        #intr-cont4 p:not(:first-child) {
-            font-size: 100%;
+        a {
+            color: black;
+        }
+        
+        .car-shop-top {
+            width: 100vw;
+            height: auto;
+        }
+
+        #car-shop h1 {
+            font-size: 6vw;
+            position: absolute;
+            color:  white;
+            top: 86vw;
+            left: 3vw;
+        }
+
+        .car-card-container {
+            display: flex;
+            position: absolute;
+            top: 122vw;
+            width: 100%;
+        }
+        
+        .car-card {
+            margin: auto;
+            width: 20%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.98);
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            padding: 10px;
+            text-align: center;
+        }
+        
+        .car-card img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+        
+        .price {
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        
+        .description {
+            color: #666;
         }
 
         @media screen and (min-width: 651px) {
@@ -357,6 +401,9 @@
         }
 
         @media screen and (max-width: 650px) {
+            #intr-mom {
+                font-size: 80%;
+            }
             .topnav {
                 justify-content: center;
             }
@@ -393,7 +440,7 @@
 <body class="fade-in">
     <div class="topnav" id="Topnav">
         <a href="/" id="logo-lnk">
-            <img src="https://raw.githubusercontent.com/Laciamix/fukuoka-car-web/main/assets/logo.png" alt="LOGO" style="height: 48px; width: auto;">
+            <img src="/assets/logo.png" alt="LOGO" style="height: 48px; width: auto;">
         </a>
         <div id="nav-links">
             <a class="link" href="/">ホーム</a>
@@ -410,35 +457,49 @@
     </div>
     <div id="mainbody">
         <div id="shopoutsidephoto">
-            <img src="https://raw.githubusercontent.com/Laciamix/fukuoka-car-web/main/assets/realphoto1.jpg">
+            <img src="/assets/realphoto1.jpg">
             <h1>BIG</h1>
             <h2>BLOCK</h2>
             <h3>車の事ならお任せ下さい</h3>
             <h4>まずはお気軽にお問い合わせ下さい。</h4>
             <div id="intr-mom">
                 <div id="intr-cont">
-                    <p>新・中古車販売</p>
-                    <p>
-                    新車中古車をリーズナブルに販売。
-                    </p>
+                    <a href="#car-shop"><p>新・中古車販売</p></a>
                 </div>
                 <div id="intr-cont2">
-                    <p>車検・修理</p>
-                    <p>
-                    外車・国産車問わず整備・車検・修理などトータルサポートしています！！
-                    </p>
+                    <a href="#vehicle-repair"><p>車検・修理</p></a>
                 </div>
                 <div id="intr-cont3">
-                    <p>買取</p>
-                    <p>
-                    お客様の満足を第一に価格を決めさせていただきます。
-                    </p>
+                    <a href="#vehicle-sell"><p>買取</p></a>
                 </div>
                 <div id="intr-cont4">
-                    <p>レストア・カスタム</p>
-                    <p>
-                    test
-                    </p>
+                    <a href="#rest-custom"><p>レストア・カスタム</p></a>
+                </div>
+            </div>
+        </div>
+        <div id="car-shop" name="car-shop">
+            <img src="/assets/realphoto2.jpg" class="car-shop-top">
+            <h1>新・中古車販売</h1>
+            <div class="car-card-container">
+                <div class="car-card">
+                    <img src="/car-photo/car-1.png" alt="商品1">
+                    <div class="price">190万</div>
+                    <div class="description">商品1の説明</div>
+                </div>
+                <div class="car-card">
+                    <img src="/car-photo/car-2.png" alt="商品2">
+                    <div class="price">190万</div>
+                    <div class="description">商品2の説明</div>
+                </div>
+                <div class="car-card">
+                    <img src="/car-photo/car-3.png" alt="商品3">
+                    <div class="price">190万</div>
+                    <div class="description">商品3の説明</div>
+                </div>
+                <div class="car-card">
+                    <img src="/car-photo/car-4.png" alt="商品4">
+                    <div class="price">190万</div>
+                    <div class="description">商品4の説明</div>
                 </div>
             </div>
         </div>
@@ -451,6 +512,7 @@
         </div>
     </div>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script>
     function menu() {
         var underline = document.getElementById('underline');
@@ -480,10 +542,9 @@
     }
 
     function scrollToTop() {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
+        $('body,html').animate({
+            scrollTop: 0},500);
+            return false;
     }
 
     function fadeIn(element) {
