@@ -192,16 +192,6 @@
             box-sizing: border-box;
         }
 
-        #office {
-            width: 30vw;
-            height: auto;
-            position: absolute;
-            top: 40vw;
-            left: 65vw;
-            border-radius: 5px;
-            border: 2px solid black;
-        }
-
         #shopoutsidephoto {
             width: 100%;
             overflow: hidden;
@@ -213,8 +203,8 @@
             display: flex;
             width: 15vw;
             top: 1vw;
-            font-size: 15vw;
-            color: red;
+            font-size: 12vw;
+            color: white;
             text-shadow: -1px -1px 0 black,
                  1px -1px 0 black,
                  -1px 1px 0 black,
@@ -225,9 +215,9 @@
             position: absolute;
             display: flex;
             width: 25vw;
-            top: 10vw;
-            font-size: 15vw;
-            color: red;
+            top: 14vw;
+            font-size: 12vw;
+            color: white;
             text-shadow: -1px -1px 0 black,
                  1px -1px 0 black,
                  -1px 1px 0 black,
@@ -284,12 +274,12 @@
         }
         
         #shopoutsidephoto h1.active {
-            top: 1vw;
+            top: 7vw;
             opacity: 1;
         }
 
         #shopoutsidephoto h2.active {
-            top: 10vw;
+            top: 15vw;
             opacity: 1;
         }
         
@@ -310,10 +300,14 @@
 
         #intr-mom {
             display: flex;
+            position: absolute;
             gap: 2%;
             font-weight: 600;
-            padding-top: 2vw;
+            top: 60vw;
+            padding-top: 10vw;
             padding-bottom: 2vw;
+            z-index: 11;
+            width: 100%;
         }
 
         #intr-cont {
@@ -437,7 +431,7 @@
         .car-card-container {
             display: flex;
             position: absolute;
-            top: 115vw;
+            top: 105vw;
             width: 250%;
             overflow: hidden;
             filter: drop-shadow(0px 10px 10px rgba(0,0,0,0.1));
@@ -446,20 +440,48 @@
         
         .left-btn, .right-btn {
             position: absolute;
-            top: 128vw;
-            width: 7vw;
-            height: 7vw;
+            top: 120vw;
+            transform: translateY(-50%);
+            width: 6vw;
+            height: 6vw;
+            border-radius: 50%;
             background-color: rgba(0, 0, 0, 0.5);
-            border-radius: 50px;
-            color: white;
-            border: none;
-            padding: 10px;
+            border: none; 
             cursor: pointer;
             z-index: 10;
         }
         
+        .left-btn::before {
+            content: "";
+            display: block;
+            width: 0;
+            height: 0;
+            border-top: var(--arrow-height) solid transparent;
+            border-bottom: var(--arrow-height) solid transparent;
+            border-right: var(--arrow-width) solid white;
+            position: absolute;
+            top: 50%;
+            left: 45%;
+            transform: translate(-50%, -50%);
+        }
+        
+        .right-btn::before {
+            content: "";
+            display: block;
+            width: 0;
+            height: 0;
+            border-top: var(--arrow-height) solid transparent;
+            border-bottom: var(--arrow-height) solid transparent;
+            border-left: var(--arrow-width) solid white;
+            position: absolute;
+            top: 50%;
+            left: 55%;
+            transform: translate(-50%, -50%);
+        } 
+        
         .left-btn {
             left: 0;
+            opacity: 0;
         }
         
         .right-btn {
@@ -527,7 +549,7 @@
                  1px -1px 0 black,
                  -1px 1px 0 black,
                  1px 1px 0 black;
-            top: 170vw;
+            top: 150vw;
             left: 3vw;
         }
 
@@ -550,7 +572,7 @@
                  1px -1px 0 black,
                  -1px 1px 0 black,
                  1px 1px 0 black;
-            top: 180vw;
+            top: 164vw;
             left: 3vw;
         }
 
@@ -566,7 +588,7 @@
         #painting h1{
             position: absolute;
             font-size: 6vw;
-            top: 250vw;
+            top: 230vw;
             left: 3vw;
             color: white;
             text-shadow: -1px -1px 0 black,
@@ -598,7 +620,7 @@
         #inspection h1{
             position: absolute;
             font-size: 6vw;
-            top: 320vw;
+            top: 300vw;
             left: 3vw;
             color: white;
             text-shadow: -1px -1px 0 black,
@@ -630,7 +652,7 @@
         #car_film h1{
             position: absolute;
             font-size: 5vw;
-            top: 405vw;
+            top: 390vw;
             left: 2vw;
             color: white;
             text-shadow: -1px -1px 0 black,
@@ -677,7 +699,7 @@
         }
 
         footer h1 {
-            font-size: 2vw;
+            font-size: 3vw;
         }
         
         .footer-logo {
@@ -687,9 +709,10 @@
         }
 
         iframe {
-            top: 9vw;
-            left: 65vw;
+            position: absolute;
             border-radius: 5px;
+            top: 32vw;
+            left: 65vw;
             width: 30vw;
             height: 30vw;
         }
@@ -698,9 +721,6 @@
             .topnav a:not(:first-child) {display: block;}
             .topnav a.icon {
                 display: none;
-            }
-            .topnav a#twitter-link {
-                display: block;
             }
         }
 
@@ -746,7 +766,7 @@
                      1px -1px 0 black,
                      -1px 1px 0 black,
                      1px 1px 0 black;
-                top: 86vw;
+                top: 90vw;
                 left: 3vw;
             }
             .car-card-container {
@@ -765,13 +785,16 @@
                      1px -1px 0 black,
                      -1px 1px 0 black,
                      1px 1px 0 black;
-                top: 160vw;
+                top: 150vw;
                 left: 3vw;
+            }
+            #insurance h2{
+                top: 160vw;
             }
             #painting h1{
                 position: absolute;
                 font-size: 6vw;
-                top: 250vw;
+                top: 230vw;
                 left: 3vw;
                 color: white;
                 text-shadow: -1px -1px 0 black,
@@ -782,7 +805,7 @@
             #inspection h1{
                 position: absolute;
                 font-size: 6vw;
-                top: 320vw;
+                top: 300vw;
                 left: 3vw;
                 color: white;
                 text-shadow: -1px -1px 0 black,
@@ -793,13 +816,32 @@
             #car_film h1{
                 position: absolute;
                 font-size: 5vw;
-                top: 395vw;
+                top: 385vw;
                 left: 2vw;
                 color: white;
                 text-shadow: -1px -1px 0 black,
                      1px -1px 0 black,
                      -1px 1px 0 black,
                      1px 1px 0 black;
+            }
+            iframe {
+                top: 30vw;
+            }
+        }
+        @media screen and (max-width: 450px) {
+            #car_film h1{
+                position: absolute;
+                font-size: 5vw;
+                top: 375vw;
+                left: 2vw;
+                color: white;
+                text-shadow: -1px -1px 0 black,
+                     1px -1px 0 black,
+                     -1px 1px 0 black,
+                     1px 1px 0 black;
+            }
+            iframe {
+                top: 25vw;
             }
         }
     </style>
@@ -812,7 +854,6 @@
         <div id="nav-links">
             <a class="link" href="/">ホーム</a>
             <a class="link" href="/profile/Bio">会社案内</a>
-            <a class="link"href="/contact">連絡</a>
         </div>
         <div class="underline" id="underline"></div>
         <a href="javascript:void(0);" class="icon" onclick="menu()">
@@ -824,13 +865,11 @@
     <div id="mainbody">
         <div id="shopoutsidephoto">
             <img src="https://raw.githubusercontent.com/Laciamix/fukuoka-car-web/main/assets/realphoto1.jpg" id="shopout">
-            <img src="https://raw.githubusercontent.com/Laciamix/fukuoka-car-web/main/assets/realphoto7.jpg" id="office">
             <h1>BIG</h1>
             <h2>BLOCK</h2>
             <h3>車の事ならお任せ下さい</h3>
-            <h4>まずはお気軽にお問い合わせ下さい。</h4>
-            <h5>電話: 0078-6002-395958</h5>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d424.4660631375562!2d133.75008560548784!3d34.590672076684086!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x355157012a699d03%3A0x2c50ab10757a07d9!2z44OT44OD44Kw44OW44Ot44OD44Kv!5e1!3m2!1sja!2sjp!4v1713879793387!5m2!1sja!2sjp"style="border:0; position: absolute;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            <h4>電話: 086-434-3735</h4>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d607.8462497819437!2d133.74965535452216!3d34.590629199873774!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x355157012a699d03%3A0x2c50ab10757a07d9!2z44OT44OD44Kw44OW44Ot44OD44Kv!5e1!3m2!1sja!2sjp!4v1714207003956!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
             <div id="intr-mom">
                 <div id="intr-cont">
                     <a href="#car-shop"><p>新・中古車販売</p></a>
@@ -852,65 +891,65 @@
         <div id="car-shop" name="car-shop">
             <img src="https://raw.githubusercontent.com/Laciamix/fukuoka-car-web/main/assets/realphoto2.jpg" class="car-shop-top">
             <h1>新・中古車販売</h1>
-            <button class="nav-btn left-btn" onclick="slideCards(-1)">❮</button>
-            <button class="nav-btn right-btn" onclick="slideCards(1)">❯</button>
+            <button class="nav-btn left-btn" onclick="slideCards(-1)"></button>
+            <button class="nav-btn right-btn" onclick="slideCards(1)"></button>
             <div class="car-card-container car-card-animate">
                 <div class="car-card car-card-animate">
-                    <img src="https://raw.githubusercontent.com/Laciamix/fukuoka-car-web/main/car-photo/car-1.jpg" alt="Coming soon">
+                    <a href="/car-info/car1/index.html"><img src="/car-photo/car-1.jpg" alt="Coming soon">
                     <div class="price">190万</div>
-                    <div class="description">商品1の説明</div>
+                    <div class="description">商品1の説明</div></a>
                 </div>
                 <div class="car-card car-card-animate">
-                    <img src="https://raw.githubusercontent.com/Laciamix/fukuoka-car-web/main/car-photo/car-2.jpg" alt="Coming soon">
+                    <a href="/car-info/car2/index.html"><img src="/car-photo/car-2.jpg" alt="Coming soon">
                     <div class="price">190万</div>
-                    <div class="description">商品2の説明</div>
+                    <div class="description">商品2の説明</div></a>
                 </div>
                 <div class="car-card car-card-animate">
-                    <img src="https://raw.githubusercontent.com/Laciamix/fukuoka-car-web/main/car-photo/car-3.jpg" alt="Coming soon">
+                    <a href="/car-info/car3/index.html"><img src="/car-photo/car-3.jpg" alt="Coming soon">
                     <div class="price">190万</div>
-                    <div class="description">商品3の説明</div>
+                    <div class="description">商品3の説明</div></a>
                 </div>
                 <div class="car-card car-card-animate">
-                    <img src="https://raw.githubusercontent.com/Laciamix/fukuoka-car-web/main/car-photo/car-4.jpg" alt="Coming soon">
+                    <a href="/car-info/car4/index.html"><img src="/car-photo/car-4.jpg" alt="Coming soon">
                     <div class="price">190万</div>
-                    <div class="description">商品4の説明</div>
+                    <div class="description">商品4の説明</div></a>
                 </div>
                 <div class="car-card car-card-animate">
-                    <img src="https://raw.githubusercontent.com/Laciamix/fukuoka-car-web/main/car-photo/car-5.jpg" alt="Coming soon">
+                    <a href="/car-info/car5/index.html"><img src="/car-photo/car-5.jpg" alt="Coming soon">
                     <div class="price">190万</div>
-                    <div class="description">商品5の説明</div>
+                    <div class="description">商品5の説明</div></a>
                 </div>
                 <div class="car-card car-card-animate">
-                    <img src="https://raw.githubusercontent.com/Laciamix/fukuoka-car-web/main/car-photo/car-6.jpg" alt="Coming soon">
+                    <a href="/car-info/car6/index.html"><img src="/car-photo/car-6.jpg" alt="Coming soon">
                     <div class="price">190万</div>
-                    <div class="description">商品6の説明</div>
+                    <div class="description">商品6の説明</div></a>
                 </div>
                 <div class="car-card car-card-animate">
-                    <img src="https://raw.githubusercontent.com/Laciamix/fukuoka-car-web/main/car-photo/car-7.jpg" alt="Coming soon">
+                    <a href="/car-info/car7/index.html"><img src="/car-photo/car-7.jpg" alt="Coming soon">
                     <div class="price">190万</div>
-                    <div class="description">商品7の説明</div>
+                    <div class="description">商品7の説明</div></a>
                 </div>
                 <div class="car-card car-card-animate">
-                    <img src="https://raw.githubusercontent.com/Laciamix/fukuoka-car-web/main/car-photo/car-8.jpg" alt="Coming soon">
+                    <a href="/car-info/car8/index.html"><img src="/car-photo/car-8.jpg" alt="Coming soon">
                     <div class="price">190万</div>
-                    <div class="description">商品8の説明</div>
+                    <div class="description">商品8の説明</div></a>
                 </div>
                 <div class="car-card car-card-animate">
-                    <img src="https://raw.githubusercontent.com/Laciamix/fukuoka-car-web/main/car-photo/car-9.jpg" alt="Coming soon">
+                    <a href="/car-info/car9/index.html"><img src="/car-photo/car-9.jpg" alt="Coming soon">
                     <div class="price">190万</div>
-                    <div class="description">商品9の説明</div>
+                    <div class="description">商品9の説明</div></a>
                 </div>
                 <div class="car-card car-card-animate">
-                    <img src="https://raw.githubusercontent.com/Laciamix/fukuoka-car-web/main/car-photo/car-10.jpg" alt="Coming soon">
+                    <a href="/car-info/car10/index.html"><img src="/car-photo/car-10.jpg" alt="Coming soon">
                     <div class="price">190万</div>
-                    <div class="description">商品10の説明</div>
+                    <div class="description">商品10の説明</div></a>
                 </div>
             </div>            
         </div>        
         <div id="insurance" name="insurance">
             <img src="https://raw.githubusercontent.com/Laciamix/fukuoka-car-web/main/assets/realphoto3.jpg">
             <h1 class="insurance-animate">各種保険</h1>
-            <h2>事故取扱い等(事故保険対応致します)<br>自賠責保険 三井住友海上火災保険株式会社代理店 各保険会社取り扱いあります</h2>
+            <h2>事故取扱い等(事故保険対応致します)<br>自賠責保険 (三井住友海上火災保険株式会社代理店) 各保険会社取り扱いあります</h2>
         </div>
         <div id="painting" name="painting">
             <img src="https://raw.githubusercontent.com/Laciamix/fukuoka-car-web/main/assets/realphoto4.jpg">
@@ -928,9 +967,9 @@
     <footer>
         <div class="footer-content">
             <img src="https://raw.githubusercontent.com/Laciamix/fukuoka-car-web/main/assets/footer.jpg" alt="Logo" class="footer-logo">
-            <h1>TOTL CAR SERVICE</h1>
+            <h1>ビッグブロック</h1>
             <p>岡山県倉敷市四十瀬１０３－２</p>
-            <p>電話: 0078-6002-395958</p>
+            <p>電話: 086-434-3735</p>
             <p>FAX: 086-434-3725</p>
             <p><a href="mailto:big-block-company@aria.ocn.ne.jp">big-block-company@aria.ocn.ne.jp</a></p>
             <p>© 2024 BIG BLOCK</p>
@@ -945,6 +984,7 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 <script>
+    //ハンバーガーメニュー
     function menu() {
         var underline = document.getElementById('underline');
         var links = document.querySelectorAll('.topnav a');
@@ -972,6 +1012,8 @@
         }
     }
 
+
+    //下の関数と連携してactiveを付与するところ
     function handleIntersection(entries, observer) {
         entries.forEach(function(entry) {
             if (entry.isIntersecting) {
@@ -981,6 +1023,7 @@
         });
     }
     
+    //指定された要素が画面に表示されたか監視する関数
     function observeElements(elements, threshold) {
         var observer = new IntersectionObserver(handleIntersection, {
             root: null,
@@ -993,6 +1036,8 @@
         });
     }
     
+
+    //これらが監視の関数を呼び出すところ(リスト型)
     var insuranceHeading = document.querySelector('#insurance h1');
     observeElements([insuranceHeading], 0.2);
     
@@ -1008,12 +1053,15 @@
     var carfilm = document.querySelectorAll('#car_film h1');
     observeElements(carfilm, 0.2); 
 
+
+    //jquery
     function scrollToTop() {
         $('body,html').animate({
             scrollTop: 0},300);
             return false;
     }
 
+    //アニメーション
     function fadeIn(element) {
         element.classList.remove('fade-out');
         element.classList.add('fade-in');
@@ -1022,7 +1070,28 @@
         }, 50);
     }
 
+    function adjustArrowSize() {
+        const leftBtn = document.querySelector('.left-btn');
+        const rightBtn = document.querySelector('.right-btn');
+    
+        const leftBtnWidth = leftBtn.offsetWidth;
+        const leftBtnHeight = leftBtn.offsetHeight;
+        const rightBtnWidth = rightBtn.offsetWidth;
+        const rightBtnHeight = rightBtn.offsetHeight;
+
+        const arrowHeight = leftBtnHeight * 0.2;
+        const arrowWidth = leftBtnWidth * 0.2;
+
+        leftBtn.style.setProperty('--arrow-width', `${arrowWidth}px`);
+        leftBtn.style.setProperty('--arrow-height', `${arrowHeight}px`);
+
+        rightBtn.style.setProperty('--arrow-width', `${arrowWidth}px`);
+        rightBtn.style.setProperty('--arrow-height', `${arrowHeight}px`);
+    }
+
+    //ロードされた際の処理
     window.onload = function() {
+        adjustArrowSize();
         fadeIn(document.body);
     
         var underline = document.getElementById('underline');
@@ -1095,6 +1164,7 @@
                 }
             }
     
+            //イージング(よくわからん)
             function easeInOut(t, b, c, d) {
                 t /= d / 2;
                 if (t < 1) return c / 2 * t * t * t + b;
@@ -1119,6 +1189,7 @@
         }
     });
 
+    //スマホの際にテキストを変更する処理
     function updateTextBasedOnScreenWidth() {
         const screenWidth = window.innerWidth;
         const smartphoneWidth = 650;
@@ -1140,13 +1211,16 @@
     
     window.addEventListener('resize', updateTextBasedOnScreenWidth);
     window.addEventListener('load', updateTextBasedOnScreenWidth);
-    
+
+    //.car-cardのボタンの処理
+    //今いるcardの数を初期化
     let currentSlide = 0;
 
+    //メインの処理
     function slideCards(direction) {
         const container = document.querySelector('.car-card-container');
         const cardWidth = document.querySelector('.car-card').offsetWidth;
-        const cardMargin = parseFloat(getComputedStyle(document.querySelector('.car-card')).marginLeft); // マージンの量を取得
+        const cardMargin = parseFloat(getComputedStyle(document.querySelector('.car-card')).marginLeft);
         const totalCards = document.querySelectorAll('.car-card').length;
         const visibleCards = 4;
     
@@ -1157,55 +1231,47 @@
         } else if (currentSlide > totalCards - visibleCards) {
             currentSlide = 0;
         }
-
+    
+        // ボタンの当たり判定を操作してからfadeアニメーション
+        const leftBtn = document.querySelector('.left-btn');
+        const rightBtn = document.querySelector('.right-btn');
+        
         if (currentSlide === 0) {
-            const leftBtn = document.querySelector('.left-btn');
             leftBtn.style.transition = 'opacity 0.5s';
             leftBtn.style.opacity = '0';
+            leftBtn.disabled = true;
             setTimeout(() => {
                 leftBtn.style.display = 'none';
             }, 500);
         } else {
-            const leftBtn = document.querySelector('.left-btn');
-            leftBtn.style.opacity = '0';
             leftBtn.style.display = 'block';
+            leftBtn.disabled = false;
             setTimeout(() => {
                 leftBtn.style.transition = 'opacity 0.5s';
                 leftBtn.style.opacity = '1';
             }, 10);
         }
-        
+    
         if (currentSlide === totalCards - visibleCards) {
-            const rightBtn = document.querySelector('.right-btn');
             rightBtn.style.transition = 'opacity 0.5s';
             rightBtn.style.opacity = '0';
+            rightBtn.disabled = true;
             setTimeout(() => {
                 rightBtn.style.display = 'none';
             }, 500);
         } else {
-            const rightBtn = document.querySelector('.right-btn');
-            rightBtn.style.opacity = '0';
             rightBtn.style.display = 'block';
+            rightBtn.disabled = false;
             setTimeout(() => {
                 rightBtn.style.transition = 'opacity 0.5s';
                 rightBtn.style.opacity = '1';
             }, 10);
         }
-        
     
         const translateValue = -(currentSlide * (cardWidth + cardMargin * 2));
         container.style.transform = `translateX(${translateValue}px)`;
     }
     
-    document.querySelector('.car-card-container').style.transform = 'translateX(0%)';
-    document.querySelector('.left-btn').style.display = 'none';
-    const rightBtn = document.querySelector('.right-btn');
-    rightBtn.style.opacity = '0';
-    rightBtn.style.display = 'block';
-    setTimeout(() => {
-        rightBtn.style.transition = 'opacity 0.5s';
-        rightBtn.style.opacity = '1';
-    }, 10);
 
 </script>
 
